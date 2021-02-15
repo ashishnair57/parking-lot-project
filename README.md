@@ -14,6 +14,11 @@ The server is spun up at `localhost:7007` and it proxies internally to the serve
 
 The local directories are mounted into the containers, so changes will reflect immediately. However, changes to package.json will likely need to a rebuild: `docker-compose down && docker-compose build && docker-compose up`.
 
+
+### Api documenation url
+
+http://localhost:7007/api-docs
+
 ## Notes
 
 ### Using docker compose
