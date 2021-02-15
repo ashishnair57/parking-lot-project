@@ -1,0 +1,11 @@
+{
+    "id": "/parkCar",
+    "type": "object",
+    "properties": {
+        "regNo": {
+            "type": "string",
+            "required": true
+        }
+    },
+    "additionalProperties": false
+}

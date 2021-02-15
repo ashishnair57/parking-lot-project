@@ -1,0 +1,135 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Parking lot application",
+    "description": "Location application for Swagger",
+    "termsOfService": "http://swagger.io/terms/"
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Parking Lot",
+      "description": "API for something"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/parkingLot": {
+      "get": {
+        "tags": [
+          "Parking Lot"
+        ],
+        "description": "Get the Car/Slot Information: This endpoint can take either the slot number or car number and return both the car number and slot number for the input. ",
+        "operationId": "parkingLot",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "spotId",
+            "in": "query",
+            "description": "Slot Number to search"
+          },
+          {
+            "name": "regNo",
+            "in": "query",
+            "description": "Car Number of search"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "create response",
+            "schema": {
+              "properties": {
+                "slotNumber": {
+                  "required": true,
+                  "type": "integer"
+                },
+                "carNumber": {
+                  "required": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/parkingLot/parkCar": {
+      "post": {
+        "tags": [
+          "Parking Lot"
+        ],
+        "description": "Park a Car: The Endpoint will be given the car number as input and outputs the slot where it is parked. If the parking lot is full, the appropriate error message is returned.",
+        "operationId": "parkCar",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Parameters",
+            "in": "body",
+            "description": "Parameters to add to the database",
+            "required": true,
+            "schema": {
+              "properties": {
+                "regNo": {
+                  "required": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get response"
+          }
+        }
+      }
+    },
+    "/api/parkingLot/unparkCar": {
+      "post": {
+        "tags": [
+          "Parking Lot"
+        ],
+        "description": "Unpark the Car: This endpoint takes the slot number from which the car is to be removed from and frees that slot up to be used by other cars.",
+        "operationId": "unparkCar",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Parameters",
+            "in": "body",
+            "description": "Parameters to add to the database",
+            "required": true,
+            "schema": {
+              "properties": {
+                "spotId": {
+                  "required": true,
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get response"
+          }
+        }
+      }
+    }
+  }
+}

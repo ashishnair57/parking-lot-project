@@ -1,0 +1,11 @@
+{
+    "id": "/unparkCar",
+    "type": "object",
+    "properties": {
+        "spotId": {
+            "type": "integer",
+            "required": true
+        }
+    },
+    "additionalProperties": false
+}

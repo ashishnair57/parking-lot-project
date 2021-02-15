@@ -1,0 +1,13 @@
+{
+    "id": "/getParkingLot",
+    "type": "object",
+    "properties": {
+        "regNo": {
+            "type": "string"
+        },
+        "spotId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false
+}
