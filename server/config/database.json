@@ -4,8 +4,7 @@
     "password": "password",
     "database": "parkingLot",
     "host": "db",
-    "dialect": "mysql",
-    "logging": true
+    "dialect": "mysql"
   },
   "test": {
     "username": "parkingLot",
